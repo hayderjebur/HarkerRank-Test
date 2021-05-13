@@ -5,8 +5,8 @@ function CustomerList() {
   const [name,setName]=useState('');
   const [users,setUsers]=useState([]);
 
-  const onChange=(event)=>{
-    setName([event.target.name]:event.target.value);
+  const onChange=(e)=>{
+    setName([e.target.name]: e.target.value);
      
   }
   const onSubmit=()=>{
