@@ -24,7 +24,7 @@ function CustomerList() {
         <input onChange={(onChange} value={user.name} name='name' type="text" className="large" placeholder="Name" data-testid="app-input"/>
         <button type="submit" className="ml-30" data-testid="submit-button">Add Customer</button>
       </section>
-  {users.map(user=>{
+      {users.map(user=>{
       <ul className="styled mt-50" data-testid="customer-list">
           <li className="slide-up-fade-in" data-testid="list-item1" key="list-item1" >{user.name}</li>
       </ul>
