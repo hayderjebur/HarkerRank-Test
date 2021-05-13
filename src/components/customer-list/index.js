@@ -8,8 +8,8 @@ function CustomerList() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!user) return;
-    setUsers([...users, user]);
-    console.log(users);
+    setUsers([user, ...users]);
+    setUser('');
   };
   return (
     <div className='mt-75 layout-column justify-content-center align-items-center'>
@@ -28,18 +28,18 @@ function CustomerList() {
             Add Customer
           </button>
 
-          {users.map((user, i) => (
-            <ul className='styled mt-50' data-testid='customer-list'>
+          <ul className='styled mt-50' data-testid='customer-list'>
+            {users.map((user, index) => (
               <li
-                key={i}
+                key={index}
                 className='slide-up-fade-in'
                 data-testid='list-item1'
                 key='list-item1'
               >
                 {user}
               </li>
-            </ul>
-          ))}
+            ))}
+          </ul>
         </form>
       </section>
     </div>
