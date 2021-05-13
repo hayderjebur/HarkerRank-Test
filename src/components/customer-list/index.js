@@ -2,11 +2,14 @@ import React,{useState}  from "react";
 import "./index.css";
 
 function CustomerList() {
-  const [name,setName]=useState('');
+  const [name,setName]=useState({});
   const [users,setUsers]=useState([]);
 
   const onChange=(e)=>{
-    setName([e.target.name]: e.target.value);
+    setName({
+        ...name,
+        [e.target.name]: e.target.value,
+      });
      
   }
   const onSubmit=()=>{
