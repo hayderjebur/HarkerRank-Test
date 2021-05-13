@@ -7,11 +7,11 @@ function CustomerList() {
 
   const onChange=(event)=>{
     setName([event.target.name]:event.target.value);
-      setUsers(name)
+     
   }
   const onSubmit=()=>{
     e.preventDefault()
-  
+   setUsers([...users,name])
 
   }
   return (
