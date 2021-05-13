@@ -8,7 +8,7 @@ function CustomerList() {
   const [users,setUsers]=useState([]);
 
   const onChange=(e)=>{
-    setUsers({
+    setUser({
         [e.target.name]: e.target.value,
       });
      
@@ -21,7 +21,7 @@ function CustomerList() {
   return (
     <div className="mt-75 layout-column justify-content-center align-items-center">
       <section onSubmit={onSubmit} className="layout-row align-items-center justify-content-center">
-        <input onChange={(e)=>onChange(e)} value={user.name}name='name' type="text" className="large" placeholder="Name" data-testid="app-input"/>
+        <input onChange={(onChange} value={user.name} name='name' type="text" className="large" placeholder="Name" data-testid="app-input"/>
         <button type="submit" className="ml-30" data-testid="submit-button">Add Customer</button>
       </section>
   {users.map(user=>{
