@@ -8,9 +8,11 @@ function CustomerList() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!user) return;
-    setUsers([user, ...users]);
+
+    setUsers([...users, user]);
     setUser('');
   };
+  console.log(users);
   return (
     <div className='mt-75 layout-column justify-content-center align-items-center'>
       <section className='layout-row align-items-center justify-content-center'>
@@ -27,19 +29,19 @@ function CustomerList() {
           <button type='submit' className='ml-30' data-testid='submit-button'>
             Add Customer
           </button>
-
-          <ul className='styled mt-50' data-testid='customer-list'>
-            {users.map((user, index) => (
-              <li
-                key={index}
-                className='slide-up-fade-in'
-                data-testid='list-item1'
-                key='list-item1'
-              >
-                {user}
-              </li>
-            ))}
-          </ul>
+          {users.length > 0 && (
+            <ul className='styled mt-50' data-testid='customer-list'>
+              {users.map((user, index) => (
+                <li
+                  key={index}
+                  className='slide-up-fade-in'
+                  data-testid={`list-item${index}`}
+                >
+                  {user}
+                </li>
+              ))}
+            </ul>
+          )}
         </form>
       </section>
     </div>
